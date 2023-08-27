@@ -1,0 +1,12 @@
+clc
+clear
+close all
+
+[fileNames,pathname_input]=uigetfile('*.pdf','Select pdf file','MultiSelect','on');
+pathout=uigetdir(pathname_input,'Select pdf Output path');
+
+num=size(fileNames,2);
+
+outputName='MergedPDF.pdf';
+outputFile=strcat(pathout,outputName);
+mergePdfs(fileNames, outputFile)
